@@ -1,0 +1,59 @@
+{
+	"name": "@sumotto/html-href-to-relative-webpack-plugin",
+	"version": "0.0.0",
+	"description": "Webpack plugin for replace <a href='/'> to relative path in HTML files.",
+	"keywords": [
+		"html",
+		"href",
+		"relative",
+		"webpack",
+		"plugin"
+	],
+	"homepage": "https://github.com/SumoTTo/html-href-to-relative-webpack-plugin#readme",
+	"bugs": {
+		"url": "https://github.com/SumoTTo/html-href-to-relative-webpack-plugin/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SumoTTo/html-href-to-relative-webpack-plugin.git"
+	},
+	"funding": "https://ko-fi.com/SumoTTo",
+	"license": "MIT",
+	"author": {
+		"name": "Sigalin Kirill",
+		"email": "sumotto@yandex.ru",
+		"url": "https://sumotto.ru"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint": "eslint {scripts,src,test}/**/*.js",
+		"fix": "eslint {scripts,src,test}/**/*.js --fix",
+		"test": "npm run lint",
+		"build": "terser src/index.js --output index.js --compress --mangle --module",
+		"prepare": "husky install",
+		"prepublishOnly": "npm run build",
+		"releaseTests": "npm run lint",
+		"releasePreview": "cross-env HUSKY=0 np --preview --test-script=releaseTests",
+		"release": "cross-env HUSKY=0 np --test-script=releaseTests"
+	},
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"dependencies": {
+		"webpack-sources": "latest"
+	},
+	"peerDependencies": {
+		"webpack": ">=4.0.0 <6.0.0"
+	},
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "latest",
+		"cross-env": "latest",
+		"eslint": "latest",
+		"husky": "latest",
+		"np": "latest",
+		"terser": "latest"
+	}
+}
