@@ -1,6 +1,6 @@
 {
 	"name": "@sumotto/html-href-to-relative-webpack-plugin",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Webpack plugin for replace <a href='/'> to relative path in HTML files.",
 	"keywords": [
 		"html",
